@@ -11,9 +11,9 @@ export default function Home() {
   }
 
   return (
-    <main className='relative h-[100vh] bg-[#DFE6F1]'>
+    <main className='h-[300vh] bg-[#DFE6F1]'>
       <Header />
-      {isNewsletter && <Newsletter handleNewsletter={handleNewsletter} />}
+      {isNewsletter && <Newsletter className='' handleNewsletter={handleNewsletter} />}
     </main>
   );
 }
