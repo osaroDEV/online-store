@@ -1,7 +1,8 @@
 import React from 'react';
 import Logo from './Logo';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { FiSearch, FiShoppingBag } from 'react-icons/fi';
+import { FiSearch, FiShoppingBag, FiUser } from 'react-icons/fi';
+import Link from 'next/link';
 
 const Header = () => {
   return (
@@ -21,8 +22,14 @@ const Header = () => {
           </ul>
         </nav>
       </section>
-      <Logo />
-      <FiShoppingBag className='w-[60px] text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
+      <Link href='https://osarodev-online-store.vercel.app'>
+        <Logo />
+      </Link>
+      <span className='flex items-center gap-4'>
+        <FiSearch className='hidden lg:block text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
+        <FiUser className='hidden lg:block text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
+        <FiShoppingBag className='lg:w-[auto] text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
+      </span>
     </header>
   );
 };
