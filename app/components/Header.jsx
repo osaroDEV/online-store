@@ -5,7 +5,7 @@ import { FiSearch, FiShoppingBag } from 'react-icons/fi';
 
 const Header = () => {
   return (
-    <header className='flex justify-between items-center h-[85px] bg-white p-4'>
+    <header className='flex relative justify-between items-center h-[85px] bg-white p-4'>
       <section className='flex w-[60px] justify-between lg:hidden'>
         <GiHamburgerMenu className='text-[20px]' />
         <FiSearch className='text-[20px]' />
