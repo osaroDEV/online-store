@@ -8,7 +8,7 @@ const Header = () => {
     <header className='flex relative justify-between items-center h-[85px] bg-white p-4'>
       <section className='flex w-[60px] justify-between lg:hidden'>
         <GiHamburgerMenu className='text-[20px]' />
-        <FiSearch className='text-[20px]' />
+        <FiSearch className='text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
       </section>
       <section className='hidden lg:block w-[33%]'>
         <nav>
@@ -22,7 +22,7 @@ const Header = () => {
         </nav>
       </section>
       <Logo />
-      <FiShoppingBag className='w-[60px] text-[20px]' />
+      <FiShoppingBag className='w-[60px] text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
     </header>
   );
 };

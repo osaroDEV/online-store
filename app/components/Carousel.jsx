@@ -6,7 +6,20 @@ import Image from 'next/image';
 const Carousel = () => {
   const [index, setIndex] = useState(0);
 
-  const imagesArr = ['/images/white.jpg', '/images/chair.jpg'];
+  const slides = [
+    {
+      src: '/images/white.jpg',
+      alt: 'white chair',
+      header: 'New Collection',
+      note: '30% OFF EVERYTHING',
+    },
+    {
+      src: '/images/chair.jpg',
+      alt: 'blue chair',
+      header: 'Tiny Budget',
+      note: 'MAKE YOUR DREAM ENVIRONMENT',
+    },
+  ];
 
   const handleIndex = () => {
     setIndex((prevIndex) => {
@@ -23,11 +36,19 @@ const Carousel = () => {
   }, [index]);
 
   return (
-    <section className='relative'>
-      <div className='absolute top-0 left-0 w-full h-[50vh]'>
-        <Image src={imagesArr[index]} fill={true} alt='' />
-      </div>
-    </section>
+    <>
+      <section className='relative'>
+        <div className='absolute top-0 left-0 w-full h-[100vh]'>
+          <Image src={slides[index].src} fill={true} alt={slides[index].alt} />
+        </div>
+        <div className='absolute top-[600px] h-[100px]'>
+          <span className='border-l-4 border-[#f1c40f] text-[26px] pl-2'>
+            {slides[index].header}
+          </span>
+          <p className='pt-4'>{slides[index].note}</p>
+        </div>
+      </section>
+    </>
   );
 };
 
