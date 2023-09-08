@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Newsletter from './components/Newsletter';
 import Header from './components/Header';
-import Carousel from './components/Carousel';
+import Slider from './components/Slider';
 import PreHeader from './components/PreHeader';
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
     <main className='h-[300vh] bg-[#DFE6F1]'>
       <PreHeader />
       <Header />
-      <Carousel />
+      <Slider />
       {isNewsletter && (
         <Newsletter className='' handleNewsletter={handleNewsletter} />
       )}

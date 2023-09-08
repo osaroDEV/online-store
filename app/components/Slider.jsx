@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-const Carousel = () => {
+const Slider = () => {
   const [index, setIndex] = useState(0);
 
   const slides = [
@@ -38,18 +39,23 @@ const Carousel = () => {
   return (
     <>
       <section className='relative'>
-        <div className='absolute top-0 left-0 w-full h-[100vh]'>
+        <div className='absolute top-0 left-0 w-full h-[350px]'>
           <Image src={slides[index].src} fill={true} alt={slides[index].alt} />
         </div>
-        <div className='absolute top-[600px] h-[100px]'>
-          <span className='border-l-4 border-[#f1c40f] text-[26px] pl-2'>
-            {slides[index].header}
-          </span>
-          <p className='pt-4'>{slides[index].note}</p>
-        </div>
       </section>
+      <div className='flex flex-col items-center gap-4 mt-[370px]'>
+        <p className='pt-4 text-[12px]'>{slides[index].note}</p>
+        <span className='border-l-4 border-[#f1c40f] text-[32px] pl-2'>
+          {slides[index].header}
+        </span>
+        <Link href='/shop'>
+          <button className='block bg-black text-white w-[100px] h-[35px]'>
+            Shop Now
+          </button>
+        </Link>
+      </div>
     </>
   );
 };
 
-export default Carousel;
+export default Slider;
