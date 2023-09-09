@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 const Slider = () => {
   const [index, setIndex] = useState(0);
+  const [imageOpacity, setImageOpacity] = useState(0);
 
   const slides = [
     {
@@ -33,14 +34,26 @@ const Slider = () => {
   };
 
   useEffect(() => {
+    // start the opacity animation when the index changes
+    setImageOpacity(0);
+    setTimeout(() => setImageOpacity(1), 100);
+
+    // change slide after a delay
     setTimeout(handleIndex, 2000);
+
+    // clean up th timer to avoid memory leaks
   }, [index]);
 
   return (
     <>
       <section className='relative'>
         <div className='absolute top-0 left-0 w-full h-[350px]'>
-          <Image src={slides[index].src} fill={true} alt={slides[index].alt} />
+          <Image
+            src={slides[index].src}
+            fill={true}
+            alt={slides[index].alt}
+            style={{ opacity: imageOpacity }}
+          />
         </div>
       </section>
       <div className='flex flex-col items-center gap-4 mt-[370px]'>

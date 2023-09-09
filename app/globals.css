@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.slider-image {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
