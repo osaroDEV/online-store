@@ -4,6 +4,7 @@ import Newsletter from './components/Newsletter';
 import Header from './components/Header';
 import Slider from './components/Slider';
 import PreHeader from './components/PreHeader';
+import ProductGallery from './components/ProductGallery';
 
 export default function Home() {
   const [isNewsletter, setIsNewsletter] = useState(true);
@@ -17,6 +18,7 @@ export default function Home() {
       <PreHeader />
       <Header />
       <Slider />
+      <ProductGallery />
       {isNewsletter && (
         <Newsletter className='' handleNewsletter={handleNewsletter} />
       )}
