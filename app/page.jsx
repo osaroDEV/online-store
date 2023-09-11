@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   return (
-    <main className='h-[300vh] bg-[#DFE6F1]'>
+    <main className='bg-[#DFE6F1]'>
       <PreHeader />
       <Header />
       <Slider />
