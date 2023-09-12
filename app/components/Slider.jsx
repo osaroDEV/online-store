@@ -44,11 +44,23 @@ const Slider = () => {
 
   return (
     <>
-      <section className='relative'>
+      {/* <section className='relative'>
         <div className='absolute top-0 left-0 w-full h-[350px]'>
           <Image
             src={slides[index].src}
             fill={true}
+            alt={slides[index].alt}
+            style={{ opacity: imageOpacity }}
+          />
+        </div>
+      </section> */}
+      <section className='relative'>
+        <div className='relative h-[350px] w-full mbm:h-[300px]'>
+          <Image
+            src={slides[index].src}
+            layout='fill'
+            objectFit='cover'
+            className=''
             alt={slides[index].alt}
             style={{ opacity: imageOpacity }}
           />
@@ -70,60 +82,3 @@ const Slider = () => {
 };
 
 export default Slider;
-
-// import React from 'react';
-// import Image from 'next/image';
-// import Link from 'next/link';
-// import ProductImage from './ProductImage';
-
-// const Slider = () => {
-  // const [index, setIndex] = useState(0);
-  // const [imageOpacity, setImageOpacity] = useState(0);
-
-  // const slides = [
-  //   {
-  //     src: '/images/white.jpg',
-  //     alt: 'white chair',
-  //     header: 'New Collection',
-  //     note: '30% OFF EVERYTHING',
-  //   },
-  //   {
-  //     src: '/images/chair.jpg',
-  //     alt: 'blue chair',
-  //     header: 'Tiny Budget',
-  //     note: 'MAKE YOUR DREAM ENVIRONMENT',
-  //   },
-  // ];
-
-  // const handleIndex = () => {
-  //   setIndex((prevIndex) => {
-  //     if (prevIndex === 0) {
-  //       return prevIndex + 1;
-  //     } else {
-  //       return prevIndex - 1;
-  //     }
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   // start the opacity animation when the index changes
-  //   setImageOpacity(0);
-  //   setTimeout(() => setImageOpacity(1), 100);
-
-  //   // change slide after a delay
-  //   setTimeout(handleIndex, 2000);
-
-  //   // clean up th timer to avoid memory leaks
-  // }, [index]);
-
-//   return (
-//     <>
-//       <div>
-//         <ProductImage />
-//         {/* Other product details */}
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Slider;
