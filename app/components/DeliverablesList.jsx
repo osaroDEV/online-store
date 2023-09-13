@@ -27,16 +27,16 @@ const deliverablesData = [
 
 const DeliverablesList = () => {
   return (
-    <section className='flex flex-col bg-white p-[2rem_0]'>
+    <section className='flex flex-col md:flex-row flex-wrap bg-white p-[2rem_0]'>
       <hr />
-      {deliverablesData.map((e, i) => {
+      {deliverablesData.map((deliverable, i) => {
         return (
-          <div className='flex flex-col justify-between items-center w-full h-[165px] mb-[2rem]' key={i}>
+          <div className='flex flex-col justify-between items-center w-full md:w-[50%] lg:w-[25%] h-[165px] mb-[2rem]' key={i}>
             <span>
-              <e.iconName className='text-[48px]' />
+              <deliverable.iconName className='text-[48px]' />
             </span>
-            <h2 className='text-xl'>{e.heading}</h2>
-            <h2 className=''>{e.note}</h2>
+            <h2 className='text-xl'>{deliverable.heading}</h2>
+            <h2 className='text-center text-[14px]'>{deliverable.note}</h2>
           </div>
         );
       })}
