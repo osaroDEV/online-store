@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import data from '../productGalleryData';
-// import ProductImage from './ProductImage';
 
 const ProductGallery = () => {
   const products = data.map((product) => {

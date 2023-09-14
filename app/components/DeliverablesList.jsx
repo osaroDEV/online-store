@@ -11,7 +11,7 @@ const deliverablesData = [
   {
     iconName: MdPayments,
     heading: 'Flexible Payment',
-    note: 'Shop and Pay in Multiple Installments',
+    note: 'Shop and pay in multiple installments',
   },
   {
     iconName: RiRefund2Fill,
@@ -21,7 +21,7 @@ const deliverablesData = [
   {
     iconName: MdSupportAgent,
     heading: 'Online Support',
-    note: '24 hours a day, 7 days a week',
+    note: '24 hours a day; 7 days a week',
   },
 ];
 
@@ -31,12 +31,17 @@ const DeliverablesList = () => {
       <hr />
       {deliverablesData.map((deliverable, i) => {
         return (
-          <div className='flex flex-col justify-between items-center w-full md:w-[50%] lg:w-[25%] h-[165px] mb-[2rem]' key={i}>
+          <div
+            className='flex flex-col gap-4 items-center w-full md:w-[50%] lg:w-[25%] h-[165px] m-[2rem_0]'
+            key={i}
+          >
             <span>
               <deliverable.iconName className='text-[48px]' />
             </span>
-            <h2 className='text-xl'>{deliverable.heading}</h2>
-            <h2 className='text-center text-[14px]'>{deliverable.note}</h2>
+            <h2 className='text-xl font-light'>{deliverable.heading}</h2>
+            <p className='text-center text-[14px] text-[rgba(0,0,0,0.5)]'>
+              {deliverable.note}
+            </p>
           </div>
         );
       })}

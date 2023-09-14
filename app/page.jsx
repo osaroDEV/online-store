@@ -19,14 +19,12 @@ export default function Home() {
   };
 
   return (
-    <main className='bg-[#DFE6F1]'>
+    <main className=''>
       <PreHeader />
       <Header />
       <Slider />
       <ProductGallery />
-      {isNewsletter && (
-        <Newsletter handleNewsletter={handleNewsletter} />
-      )}
+      {isNewsletter && <Newsletter handleNewsletter={handleNewsletter} />}
       <DeliverablesList />
       <YouTubeVideo videoId={videoId} />
       <Footer />
