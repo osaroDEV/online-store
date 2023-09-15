@@ -38,7 +38,7 @@ const Footer = () => {
       <section className='flex flex-col md:flex-row flex-wrap'>
         <div className='h-auto md:h-[200px] w-full md:w-[50%] lg:w-[25%] p-2'>
           <div className='flex md:block justify-between items-center'>
-            <h2 className='uppercase font-bold'>contact us</h2>
+            <h2 className='uppercase font-bold tracking-[2px]'>contact us</h2>
             <span onClick={handleContactExpand} className='md:hidden text-2xl'>
               {isContactExpand ? (
                 <MdOutlineExpandLess />
@@ -50,7 +50,7 @@ const Footer = () => {
           <div className='md:hidden'>
             {isContactExpand ? (
               <div>
-                <section className='text-[14px]'>
+                <section className='text-[14px] lg:text-[16px] leading-[1.7]'>
                   <p>Add: 6C Bahados Str. Colorado Springs Way, Arizona</p>
                   <p>Tel: +234-703-103-6340</p>
                   <p>Email: support@sterilo.com</p>
@@ -73,7 +73,7 @@ const Footer = () => {
             ) : null}
           </div>
           <div className='hidden md:block'>
-            <section className='text-[14px]'>
+            <section className='text-[14px] lg:text-[16px] leading-[1.7]'>
               <p>Add: 6C Bahados Str. Colorado Springs Way, Arizona</p>
               <p>Tel: +234-703-103-6340</p>
               <p>Email: support@sterilo.com</p>
@@ -96,14 +96,14 @@ const Footer = () => {
         </div>
         <div className='h-auto md:h-[200px] w-full md:w-[50%] lg:w-[25%] p-2'>
           <div className='flex md:block justify-between items-center'>
-            <h2 className='uppercase font-bold'>help</h2>
+            <h2 className='uppercase font-bold tracking-[2px]'>help</h2>
             <span onClick={handleHelpExpand} className='md:hidden text-2xl'>
               {isHelpExpand ? <MdOutlineExpandLess /> : <MdOutlineExpandMore />}
             </span>
           </div>
           <div>
             {isHelpExpand ? (
-              <section className='md:hidden text-[14px]'>
+              <section className='md:hidden text-[14px] lg:text-[16px] leading-[1.7]'>
                 <p>
                   <Link href='/terms'>Terms</Link>
                 </p>
@@ -113,7 +113,7 @@ const Footer = () => {
               </section>
             ) : null}
           </div>
-          <section className='hidden md:block text-[14px]'>
+          <section className='hidden md:block text-[14px] lg:text-[16px] leading-[1.7]'>
             <p>
               <Link href='/terms'>Terms</Link>
             </p>
@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
         <div className='h-auto md:h-[200px] w-full md:w-[50%] lg:w-[25%] p-2'>
           <div className='flex md:block justify-between items-center'>
-            <h2 className='uppercase font-bold'>learn more</h2>
+            <h2 className='uppercase font-bold tracking-[2px]'>learn more</h2>
             <span
               onClick={handleLearnMoreExpand}
               className='md:hidden text-2xl font-thin'
@@ -138,7 +138,7 @@ const Footer = () => {
           </div>
           <div>
             {isLearnMoreExpand ? (
-              <section className='md:hidden text-[14px]'>
+              <section className='md:hidden text-[14px] lg:text-[16px] leading-[1.7]'>
                 <p>
                   <Link href='/about-us'>About Us</Link>
                 </p>
@@ -154,7 +154,7 @@ const Footer = () => {
               </section>
             ) : null}
           </div>
-          <section className='hidden md:block text-[14px]'>
+          <section className='hidden md:block text-[14px] lg:text-[16px] leading-[1.7]'>
             <p>
               <Link href='/about-us'>About Us</Link>
             </p>
@@ -171,7 +171,7 @@ const Footer = () => {
         </div>
         <div className='h-auto md:h-[200px] w-full md:w-[50%] lg:w-[25%] p-2'>
           <div className='flex md:block justify-between items-center'>
-            <h2 className='uppercase font-bold'>join us</h2>
+            <h2 className='uppercase font-bold tracking-[2px]'>join us</h2>
             <span onClick={handleJoinUsExpand} className='md:hidden text-2xl'>
               {isJoinUsExpand ? (
                 <MdOutlineExpandLess />
@@ -182,10 +182,14 @@ const Footer = () => {
           </div>
           <div>
             {isJoinUsExpand ? (
-              <section className='md:hidden text-[14px]'>
+              <section className='md:hidden text-[14px] lg:text-[16px] leading-[1.7]'>
                 <p>New subscribers get 30% off their first purchase</p>
                 <div className='flex w-full'>
-                  <input type='text' className='w-[80%]' />
+                  <input
+                    type='text'
+                    placeholder='your email'
+                    className='w-[80%] border border-[rgba(0,0,0,0.1)] indent-3 outline-0'
+                  />
                   <span className='flex justify-center items-center p-4 md:w-full h-[50px] bg-black'>
                     <MdOutlineMailOutline className='text-3xl text-white' />
                   </span>
@@ -193,10 +197,14 @@ const Footer = () => {
               </section>
             ) : null}
           </div>
-          <section className='hidden md:block text-[14px]'>
+          <section className='hidden md:block text-[14px] lg:text-[16px] leading-[1.7]'>
             <p>New subscribers get 30% off their first purchase</p>
             <div className='flex'>
-              <input type='text' className='w-[80%]' />
+              <input
+                type='text'
+                placeholder='your email'
+                className='w-[80%] border border-[rgba(0,0,0,0.1)] indent-3 outline-0'
+              />
               <span className='flex justify-center items-center p-4 h-[50px] bg-black w-[20%]'>
                 <MdOutlineMailOutline className='text-3xl text-white' />
               </span>

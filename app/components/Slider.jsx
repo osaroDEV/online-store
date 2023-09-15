@@ -44,18 +44,8 @@ const Slider = () => {
 
   return (
     <>
-      {/* <section className='relative'>
-        <div className='absolute top-0 left-0 w-full h-[350px]'>
-          <Image
-            src={slides[index].src}
-            fill={true}
-            alt={slides[index].alt}
-            style={{ opacity: imageOpacity }}
-          />
-        </div>
-      </section> */}
       <section className='relative'>
-        <div className='relative h-[350px] w-full mbm:h-[300px]'>
+        <div className='relative h-[60vh] 375:h-[70vh] 425:h-[80vh] 550:h-[90vh] sm:h-[100vh] md:h-[110vh] lg:h-[150vh] w-full'>
           <Image
             src={slides[index].src}
             layout='fill'
@@ -66,7 +56,7 @@ const Slider = () => {
           />
         </div>
       </section>
-      <div className='flex flex-col items-center gap-4 mt-[370px] mb-[2rem]'>
+      <div className='flex flex-col items-center gap-4 mb-[2rem]'>
         <p className='pt-4 text-[12px]'>{slides[index].note}</p>
         <span className='border-l-4 border-[#f1c40f] text-[32px] pl-2'>
           {slides[index].header}

@@ -1,19 +1,17 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import './globals.css';
+import { Montserrat } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const mont = Montserrat({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'sterilo Stores',
   description: 'Purchase Anything You Desire',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {children}
-        </body>
+    <html lang='en'>
+      <body className={mont.className}>{children}</body>
     </html>
-  )
+  );
 }
