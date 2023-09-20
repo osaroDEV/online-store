@@ -34,8 +34,8 @@ const Footer = () => {
   };
 
   return (
-    <div className='p-4 mb-[300px]'>
-      <section className='flex flex-col md:flex-row flex-wrap'>
+    <div className='p-4'>
+      <section className='flex flex-col md:flex-row flex-wrap mb-8 md:mb-4'>
         <div className='h-auto md:h-[200px] w-full md:w-[50%] lg:w-[25%] p-2'>
           <div className='flex md:block justify-between items-center'>
             <h2 className='uppercase font-bold tracking-[2px]'>contact us</h2>
@@ -213,7 +213,7 @@ const Footer = () => {
         </div>
       </section>
       <hr className='border border-[rgba(0,0,0,0.3)] mb-[1rem]' />
-      <span className='p-[1rem_0]'>
+      <span className='p-[1rem_0] text-[14px]'>
         Copyright &copy; 2023. All rights reserved
       </span>
     </div>

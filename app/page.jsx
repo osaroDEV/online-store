@@ -1,16 +1,15 @@
 'use client';
 import { useState } from 'react';
 import Newsletter from './components/Newsletter';
-import Header from './components/Header';
+// import Login from './components/Login';
 import Slider from './components/Slider';
-import PreHeader from './components/PreHeader';
 import ProductGallery from './components/ProductGallery';
 import YouTubeVideo from './components/YouTubeVideo';
 import DeliverablesList from './components/DeliverablesList';
-import Footer from './components/Footer';
 
 export default function Home() {
   const [isNewsletter, setIsNewsletter] = useState(true);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const videoId = 'e5Hc2B50Z7c';
 
@@ -18,16 +17,18 @@ export default function Home() {
     setIsNewsletter(!isNewsletter);
   };
 
+  // const handleLoginModal = () => {
+  //   setIsLoggedIn(!isLoggedIn);
+  // };
+
   return (
     <main className=''>
-      <PreHeader />
-      <Header />
       <Slider />
       <ProductGallery />
       {isNewsletter && <Newsletter handleNewsletter={handleNewsletter} />}
+      {/* {isLoggedIn ? null : <Login />} */}
       <DeliverablesList />
       <YouTubeVideo videoId={videoId} />
-      <Footer />
     </main>
   );
 }
