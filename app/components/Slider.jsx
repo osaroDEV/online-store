@@ -61,7 +61,7 @@ const Slider = () => {
         <span className='border-l-4 border-[#f1c40f] text-[32px] pl-2'>
           {slides[index].header}
         </span>
-        <Link href='/shop'>
+        <Link href='/account'>
           <button className='block bg-black text-white w-[100px] h-[35px]'>
             Shop Now
           </button>
