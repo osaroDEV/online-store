@@ -20,7 +20,7 @@ export async function POST(request) {
       }
     );
   }
-  //   always check this
+  //   always checkS
   const secret = process.env.JWT_SECRET || '';
 
   const token = sign(
