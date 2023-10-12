@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import data from '../productGalleryData';
+import data from '../app/productGalleryData';
 
 const ProductGallery = () => {
   const products = data.map((product) => {

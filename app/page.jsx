@@ -1,11 +1,11 @@
 'use client';
 import { useState } from 'react';
-import Newsletter from './components/Newsletter';
+import Newsletter from '../components/Newsletter';
 // import Login from './components/Login';
-import Slider from './components/Slider';
-import ProductGallery from './components/ProductGallery';
-import YouTubeVideo from './components/YouTubeVideo';
-import DeliverablesList from './components/DeliverablesList';
+import Slider from '../components/Slider';
+import ProductGallery from '../components/ProductGallery';
+import YouTubeVideo from '../components/YouTubeVideo';
+import DeliverablesList from '../components/DeliverablesList';
 
 export default function Home() {
   const [isNewsletter, setIsNewsletter] = useState(true);
