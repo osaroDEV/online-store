@@ -1,31 +1,48 @@
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { PrismaClient } from '@prisma/client';
-import NextAuth from 'next-auth';
+import { connectMongoDB } from "@/lib/mongodb";
+import User from "@/models/user";
+import NextAuth from "next-auth/next";
+import CredentialsProvider from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
 
-import EmailProvider from 'next-auth/providers/email';
-import GoogleProvider from 'next-auth/providers/google';
-
-const prisma = new PrismaClient();
-
-const handler = NextAuth({
+export const authOptions = {
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
-    EmailProvider({
-      server: {
-        host: process.env.EMAIL_SERVER_HOST,
-        port: process.env.EMAIL_SERVER_PORT,
-        auth: {
-          user: process.env.EMAIL_SERVER_USER,
-          pass: process.env.EMAIL_SERVER_PASSWORD,
-        },
+    CredentialsProvider({
+      name: "credentials",
+      credentials: {},
+
+      async authorize(credentials) {
+        const { email, password } = credentials;
+
+        try {
+          await connectMongoDB();
+          const user = await User.findOne({ email });
+
+          if (!user) {
+            return null;
+          }
+
+          const passwordsMatch = await bcrypt.compare(password, user.password);
+
+          if (!passwordsMatch) {
+            return null;
+          }
+
+          return user;
+        } catch (error) {
+          console.log("Error: ", error);
+        }
       },
-      from: process.env.EMAIL_FROM,
     }),
   ],
-  adapter: PrismaAdapter(prisma),
-});
+  session: {
+    strategy: "jwt",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/",
+  },
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

@@ -61,12 +61,14 @@ const Header = () => {
           </ul>
         </nav>
       </section>
-      <Link href='https://osarodev-online-store.vercel.app'>
+      <Link href='/'>
         <Logo />
       </Link>
       <span className='flex items-center gap-4'>
         <FiSearch className='hidden lg:block text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
-        <FiUser className='hidden lg:block text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
+        <Link href='/account'>
+          <FiUser className='hidden lg:block text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
+        </Link>
         <FiShoppingBag className='lg:w-[auto] text-[20px] cursor-pointer hover:text-[#ffc107] duration-200 ease-out' />
       </span>
     </header>

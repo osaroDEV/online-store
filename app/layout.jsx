@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import PreHeader from '../components/PreHeader';
 import Footer from '../components/Footer';
 import MenuWidget from '../components/MenuWidget';
+import { AuthProvider } from './Providers';
 
 const mont = Montserrat({ subsets: ['latin'] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={mont.className}>
         <PreHeader />
         <Header />
-        <main>{children}</main>
+        <AuthProvider>{children}</AuthProvider>
         <MenuWidget />
         <Footer />
       </body>
