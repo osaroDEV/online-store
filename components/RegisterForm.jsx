@@ -61,26 +61,41 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className='grid place-items-center h-screen'>
-      <div className='shadow-lg p-5 rounded-lg border-t-4 border-green-400'>
-        <h1 className='text-xl font-bold my-4'>Register</h1>
-        <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
-          <input
-            onChange={(e) => setName(e.target.value)}
-            type='text'
-            placeholder='Full Name'
-          />
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type='text'
-            placeholder='Email'
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type='password'
-            placeholder='Password'
-          />
-          <button className='bg-green-600 text-white font-bold cursor-pointer px-6 py-2'>
+    <section className='flex justify-center items-center'>
+      <div>
+        <h2 className='text-xl m-[1rem_0]'>Register</h2>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+          <div>
+            <input
+              type='text'
+              onChange={(e) => setName(e.target.value)}
+              placeholder='full name*'
+              required
+              className='border border-slate-500 outline-black mb-4 p-2 w-full'
+            />
+          </div>
+          <div>
+            <input
+              type='text'
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder='email*'
+              required
+              className='border border-slate-500 outline-black mb-4 p-2 w-full'
+            />
+          </div>
+          <div>
+            <input
+              type='password'
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder='password*'
+              required
+              className='border border-slate-500 outline-black mb-4 p-2 w-full'
+            />
+          </div>
+          <button
+            type='submit'
+            className='block bg-black text-white w-full h-[40px]'
+          >
             REGISTER
           </button>
           {error && (
@@ -88,11 +103,11 @@ export default function RegisterForm() {
               {error}
             </div>
           )}
-          <Link className='text-sm mt-3 text-right' href={'/account'}>
-            Already have an account? <span className='underline'>Login</span>
-          </Link>
         </form>
+        <span>
+          Already have an account? Go to <Link href={'/account'}>login</Link>
+        </span>
       </div>
-    </div>
+    </section>
   );
 }
